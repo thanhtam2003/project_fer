@@ -1,0 +1,38 @@
+body {
+    background-color: #121212;
+    /* Dark background color */
+    color: white;
+    /* White text for contrast */
+}
+
+.app-container {
+    background-color: #1c1c1c;
+    /* Slightly lighter dark color for content */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Ensure all containers and components use dark colors */
+.container,
+.navbar,
+.card,
+.carousel-item {
+    background-color: #1c1c1c;
+    /* Matching the main background */
+    color: white;
+}
+
+h1,
+h2,
+h3,
+p,
+.text-white {
+    color: white;
+    /* Override any default styles */
+}
+
+button,
+.btn-outline-light {
+    color: white;
+    border-color: white;
+}

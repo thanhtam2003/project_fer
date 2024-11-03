@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import { menuItems } from './Menu';
-
+import './App.css';
 
 const initialState = {
     questions: [
@@ -28,7 +28,6 @@ const initialState = {
             answer: 'A syntax extension for JavaScript',
         },
     ],
-
     currentQuestion: 0,
     selectedOption: '',
     score: 0,
@@ -51,7 +50,6 @@ function reducer(state, action) {
         default: throw new Error(`${action.type} is not a valid action type`);
     }
 }
-
 
 function HomePage() {
     return (
@@ -84,7 +82,7 @@ function HomePage() {
             </Carousel>
 
             {/* Welcome Section */}
-            <div className="welcome-section text-center my-4">
+            <div className="welcome-section text-center my-4 text-white bg-dark p-3 rounded">
                 <h2>Welcome to Our Site!</h2>
                 <p>Explore amazing content, find new recipes, and stay updated with the latest news. Join us for an exciting experience!</p>
             </div>
@@ -92,66 +90,65 @@ function HomePage() {
             {/* Feature Section */}
             <Row className="feature-section mt-4">
                 <Col md={4}>
-                    <Card>
+                    <Card bg="dark" text="white">
                         <Card.Img variant="top" src="./images/feature1.jpg" />
                         <Card.Body>
                             <Card.Title>Featured Item 1</Card.Title>
                             <Card.Text>Learn more about this amazing item.</Card.Text>
-                            <Button variant="primary">Read More</Button>
+                            <Button variant="outline-light">Read More</Button>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col md={4}>
-                    <Card>
+                    <Card bg="dark" text="white">
                         <Card.Img variant="top" src="./images/feature2.jpg" />
                         <Card.Body>
                             <Card.Title>Featured Item 2</Card.Title>
                             <Card.Text>Discover what makes this special.</Card.Text>
-                            <Button variant="primary">Explore</Button>
+                            <Button variant="outline-light">Explore</Button>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col md={4}>
-                    <Card>
+                    <Card bg="dark" text="white">
                         <Card.Img variant="top" src="./images/feature3.jpg" />
                         <Card.Body>
                             <Card.Title>Featured Item 3</Card.Title>
                             <Card.Text>Check out our latest addition.</Card.Text>
-                            <Button variant="primary">Find Out More</Button>
+                            <Button variant="outline-light">Find Out More</Button>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
 
             {/* Newsletter Signup */}
-            <div className="newsletter-section mt-5 text-center">
+            <div className="newsletter-section mt-5 text-center text-white bg-dark p-4 rounded">
                 <h3>Stay Updated!</h3>
                 <p>Subscribe to our newsletter for the latest updates and exclusive content.</p>
                 <Form inline className="d-flex justify-content-center">
                     <Form.Control type="email" placeholder="Enter your email" className="mr-2" />
-                    <Button variant="success">Subscribe</Button>
+                    <Button variant="outline-light">Subscribe</Button>
                 </Form>
             </div>
 
             {/* Testimonial Section */}
-            <div className="testimonial-section my-5">
+            <div className="testimonial-section my-5 text-white bg-dark p-3 rounded">
                 <h3>What Our Users Say</h3>
                 <blockquote className="blockquote text-center">
                     <p>"This site has changed the way I find recipes! The content is top-notch and easy to follow."</p>
-                    <footer className="blockquote-footer">Jane Doe, Food Enthusiast</footer>
+                    <footer className="blockquote-footer text-white-50">Jane Doe, Food Enthusiast</footer>
                 </blockquote>
             </div>
 
             {/* CTA Banner */}
-            <div className="cta-banner text-center bg-info text-white py-4">
+            <div className="cta-banner text-center bg-dark text-white py-4 rounded">
                 <h4>Join Our Community!</h4>
                 <p>Sign up now and be a part of a community that shares your passion for food, news, and much more.</p>
-                <Button variant="light">Get Started</Button>
+                <Button variant="outline-light">Get Started</Button>
             </div>
         </>
     );
 }
-
 
 function Menu() {
     return (
@@ -159,14 +156,14 @@ function Menu() {
             <Row xs={1} md={4} className="g-4">
                 {menuItems.map((news, id) => (
                     <Col key={id} className='mb-3'>
-                        <Card style={{ width: '18rem', height: '100%' }}>
+                        <Card bg="dark" text="white" style={{ width: '18rem', height: '100%' }}>
                             <Card.Img variant="top" src={news.image} style={{ height: '200px', objectFit: 'cover' }} />
                             <Card.Body className="d-flex flex-column">
                                 <Card.Title>{news.title}</Card.Title>
                                 <Card.Text className="flex-grow-1">
                                     {news.description}
                                 </Card.Text>
-                                <Button variant="outline-dark">Read more</Button>{' '}
+                                <Button variant="outline-light">Read more</Button>{' '}
                             </Card.Body>
                         </Card>
                     </Col>
@@ -177,7 +174,6 @@ function Menu() {
 }
 
 function Quiz() {
-
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const handleOption = (option) => {
@@ -195,10 +191,10 @@ function Quiz() {
     if (state.showScore) {
         return (
             <Container>
-                <Row className='bg-light text-black mt-3 p-3'>
+                <Row className='bg-dark text-white mt-3 p-3 rounded'>
                     <Col >
                         <h2>Your score is {state.score}/{state.questions.length}</h2>
-                        <button onClick={handleRestart}>Restart Quiz</button>
+                        <button onClick={handleRestart} className="btn btn-outline-light">Restart Quiz</button>
                     </Col>
                 </Row>
             </Container>
@@ -207,12 +203,12 @@ function Quiz() {
 
     return (
         <Container>
-            <Row className='bg-light text-black mt-3 p-3'>
+            <Row className='bg-dark text-white mt-3 p-3 rounded'>
                 <Col >
                     <h2>Question {state.questions[state.currentQuestion].id}</h2>
                     <h3>{state.questions[state.currentQuestion].question}</h3>
                     <Form>
-                        <table className="table table-bordered">
+                        <table className="table table-dark table-bordered">
                             <tbody>
                                 {
                                     state.questions[state.currentQuestion].options.map((option, index) => (
@@ -234,7 +230,7 @@ function Quiz() {
                         </table>
                     </Form>
                     <div>
-                        <button onClick={handleNextQuestion} disabled={!state.selectedOption}>Next</button>
+                        <button onClick={handleNextQuestion} className="btn btn-outline-light" disabled={!state.selectedOption}>Next</button>
                     </div>
                 </Col>
             </Row>
@@ -257,10 +253,10 @@ function Contact() {
         <Row className='mt-5 mb-5'>
             <Col>
                 <h2 className='text-center text-white'>Contact Us</h2>
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Form noValidate validated={validated} onSubmit={handleSubmit} className="bg-dark p-4 rounded">
                     <Row className='mb-3'>
                         <Form.Group as={Col} md="4" controlId="firstName">
-                            <Form.Label>First name</Form.Label>
+                            <Form.Label className="text-white">First name</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -271,7 +267,7 @@ function Contact() {
                         </Form.Group>
 
                         <Form.Group as={Col} md="4" controlId="lastName">
-                            <Form.Label>Last name</Form.Label>
+                            <Form.Label className="text-white">Last name</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -282,7 +278,7 @@ function Contact() {
                         </Form.Group>
 
                         <Form.Group as={Col} md="4" controlId="username">
-                            <Form.Label>Username</Form.Label>
+                            <Form.Label className="text-white">Username</Form.Label>
                             <InputGroup>
                                 <InputGroup.Text>@</InputGroup.Text>
                                 <Form.Control
@@ -297,16 +293,19 @@ function Contact() {
 
                     <Row className='mb-3'>
                         <Form.Group as={Col} md="4" controlId="city">
+                            <Form.Label className="text-white">City</Form.Label>
                             <Form.Control required placeholder="City" />
                             <Form.Control.Feedback type="invalid">Please provide a valid city.</Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group as={Col} md="4" controlId="state">
+                            <Form.Label className="text-white">State</Form.Label>
                             <Form.Control required placeholder="State" />
                             <Form.Control.Feedback type="invalid">Please provide a valid state.</Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group as={Col} md="4" controlId="zip">
+                            <Form.Label className="text-white">Zip</Form.Label>
                             <Form.Control required placeholder="Zip" />
                             <Form.Control.Feedback type="invalid">Please provide a valid zip.</Form.Control.Feedback>
                         </Form.Group>
@@ -315,13 +314,13 @@ function Contact() {
                     <Form.Group className="mb-3">
                         <Form.Check
                             required
-                            label="Agree to terms and conditions"
+                            label={<span className="text-white">Agree to terms and conditions</span>}
                             feedback="You must agree before submitting."
                             feedbackType="invalid"
                         />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button variant="outline-light" type="submit">
                         Submit form
                     </Button>
                 </Form>
@@ -333,29 +332,29 @@ function Contact() {
 function App() {
     return (
         <Router>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="dark" variant="dark" expand="lg">
                 <Navbar.Brand>
-                    <h1 style={{ color: "green" }}>The Baker’s Corner</h1>
+                    <h1 style={{ color: "lightgreen" }}>The Baker’s Corner</h1>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link as={Link} to="/" exact>
+                        <Nav.Link as={Link} to="/" exact className="text-white">
                             Home
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/menu">
+                        <Nav.Link as={Link} to="/menu" className="text-white">
                             Our Menu
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/quiz">
+                        <Nav.Link as={Link} to="/quiz" className="text-white">
                             Quiz
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/contact">
+                        <Nav.Link as={Link} to="/contact" className="text-white">
                             Contact
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <div className="container mt-4">
+            <div className="container mt-4 app-container">
                 <Routes>
                     <Route path="/" element={<Outlet />}>
                         <Route index element={<HomePage />} />
@@ -369,3 +368,4 @@ function App() {
     );
 }
 export default App;
+
