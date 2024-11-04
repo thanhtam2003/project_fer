@@ -81,70 +81,82 @@ function HomePage() {
                 </Carousel.Item>
             </Carousel>
 
-            {/* Welcome Section */}
-            <div className="welcome-section text-center my-4 text-white bg-dark p-3 rounded">
-                <h2>Welcome to Our Site!</h2>
-                <p>Explore amazing content, find new recipes, and stay updated with the latest news. Join us for an exciting experience!</p>
+            <div className="welcome-section text-center my-4 bg-light p-3 rounded">
+                <h2>Welcome to Our Bakery Paradise!</h2>
+                <p>
+                    Step into a world where every bite tells a story. At our bakery, we blend tradition and innovation to create baked goods that not only delight the taste buds but also warm the heart. From freshly baked artisan bread to exquisite pastries, we are dedicated to delivering the finest quality and unparalleled taste. Explore our recipes, join our live baking sessions, and stay inspired with the latest creations and seasonal specials. Join us for a journey of flavors and experiences that you won’t forget!
+                </p>
             </div>
 
-            {/* Feature Section */}
             <Row className="feature-section mt-4">
                 <Col md={4}>
-                    <Card bg="dark" text="white">
-                        <Card.Img variant="top" src="./images/feature1.jpg" />
-                        <Card.Body>
-                            <Card.Title>Featured Item 1</Card.Title>
-                            <Card.Text>Learn more about this amazing item.</Card.Text>
-                            <Button variant="outline-light">Read More</Button>
+                    <Card bg="light" text="dark" className="h-100">
+                        <Card.Img
+                            variant="top"
+                            src="./images/event-1.jpg"
+                            style={{ height: '200px', objectFit: 'cover' }}
+                        />
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title>Bakery Showcase</Card.Title>
+                            <Card.Text className="flex-grow-1">Experience the artistry and passion behind our bakery delights.</Card.Text>
+                            <Button variant="outline-brown" className="mt-auto">Discover More</Button>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col md={4}>
-                    <Card bg="dark" text="white">
-                        <Card.Img variant="top" src="./images/feature2.jpg" />
-                        <Card.Body>
-                            <Card.Title>Featured Item 2</Card.Title>
-                            <Card.Text>Discover what makes this special.</Card.Text>
-                            <Button variant="outline-light">Explore</Button>
+                    <Card bg="light" text="dark" className="h-100">
+                        <Card.Img
+                            variant="top"
+                            src="./images/event-2.jpg"
+                            style={{ height: '200px', objectFit: 'cover' }}
+                        />
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title>Live Baking Session</Card.Title>
+                            <Card.Text className="flex-grow-1">Join our master baker as he demonstrates the secrets of perfect bread-making.</Card.Text>
+                            <Button variant="outline-brown" className="mt-auto">Join Us</Button>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col md={4}>
-                    <Card bg="dark" text="white">
-                        <Card.Img variant="top" src="./images/feature3.jpg" />
-                        <Card.Body>
-                            <Card.Title>Featured Item 3</Card.Title>
-                            <Card.Text>Check out our latest addition.</Card.Text>
-                            <Button variant="outline-light">Find Out More</Button>
+                    <Card bg="light" text="dark" className="h-100">
+                        <Card.Img
+                            variant="top"
+                            src="./images/event-3.jpg"
+                            style={{ height: '200px', objectFit: 'cover' }}
+                        />
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title>Delightful Desserts</Card.Title>
+                            <Card.Text className="flex-grow-1">Indulge in our array of sweet treats, crafted with love and precision.</Card.Text>
+                            <Button variant="outline-brown" className="mt-auto">Taste Now</Button>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
 
-            {/* Newsletter Signup */}
-            <div className="newsletter-section mt-5 text-center text-white bg-dark p-4 rounded">
-                <h3>Stay Updated!</h3>
-                <p>Subscribe to our newsletter for the latest updates and exclusive content.</p>
-                <Form inline className="d-flex justify-content-center">
-                    <Form.Control type="email" placeholder="Enter your email" className="mr-2" />
-                    <Button variant="outline-light">Subscribe</Button>
-                </Form>
+            <div className="d-flex flex-wrap align-items-center my-5 p-4 bg-light border rounded">
+                <div className="col-md-6">
+                    <img src="./images/menu-01.jpg" alt="Freshly baked goods" className="img-fluid rounded" style={{ maxHeight: '400px', objectFit: 'cover' }} />
+                </div>
+                <div className="col-md-6 px-4">
+                    <h4 className="mt-3">Shop, Ship & Enjoy!</h4>
+                    <p>
+                        Indulge in the authentic taste of freshly baked artisan bread and delightful pastries. Whether you're gifting a basket of baked goods or savoring them at home, we promise a taste that feels like home. Order online for delivery and make every moment special with our lovingly crafted treats.
+                    </p>
+                    <Button variant="outline-brown" className="mt-2">Shop Our Online Store</Button>
+                </div>
             </div>
 
-            {/* Testimonial Section */}
-            <div className="testimonial-section my-5 text-white bg-dark p-3 rounded">
-                <h3>What Our Users Say</h3>
-                <blockquote className="blockquote text-center">
-                    <p>"This site has changed the way I find recipes! The content is top-notch and easy to follow."</p>
-                    <footer className="blockquote-footer text-white-50">Jane Doe, Food Enthusiast</footer>
-                </blockquote>
-            </div>
-
-            {/* CTA Banner */}
-            <div className="cta-banner text-center bg-dark text-white py-4 rounded">
-                <h4>Join Our Community!</h4>
-                <p>Sign up now and be a part of a community that shares your passion for food, news, and much more.</p>
-                <Button variant="outline-light">Get Started</Button>
+            <div className="d-flex flex-wrap align-items-center my-5 p-4 bg-light border rounded">
+                <div className="col-md-6 order-md-2">
+                    <img src="./images/aaaa.webp" alt="Bakery location entrance" className="img-fluid rounded" style={{ maxHeight: '400px', objectFit: 'cover' }} />
+                </div>
+                <div className="col-md-6 order-md-1 px-4">
+                    <h4 className="mt-3">Our Bakery Locations</h4>
+                    <p>
+                        Visit our cozy bakery locations across the city, including our flagship store downtown, for an experience filled with the aroma of freshly baked bread and sweet pastries. Stop by for breakfast, lunch, or a simple treat that brightens your day.
+                    </p>
+                    <Button variant="outline-brown" className="mt-2">Find a Location Near You</Button>
+                </div>
             </div>
         </>
     );
@@ -156,14 +168,18 @@ function Menu() {
             <Row xs={1} md={4} className="g-4">
                 {menuItems.map((news, id) => (
                     <Col key={id} className='mb-3'>
-                        <Card bg="dark" text="white" style={{ width: '18rem', height: '100%' }}>
-                            <Card.Img variant="top" src={news.image} style={{ height: '200px', objectFit: 'cover' }} />
+                        <Card className="h-100">
+                            <Card.Img
+                                variant="top"
+                                src={news.image}
+                                style={{ height: '200px', objectFit: 'cover' }}
+                            />
                             <Card.Body className="d-flex flex-column">
                                 <Card.Title>{news.title}</Card.Title>
                                 <Card.Text className="flex-grow-1">
                                     {news.description}
                                 </Card.Text>
-                                <Button variant="outline-light">Read more</Button>{' '}
+                                <Button variant="outline-brown" className="mt-auto">Read more</Button>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -332,28 +348,30 @@ function Contact() {
 function App() {
     return (
         <Router>
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar bg="light" variant="light" expand="lg" className="bg-light-brown">
                 <Navbar.Brand>
-                    <h1 style={{ color: "lightgreen" }}>The Baker’s Corner</h1>
+                    <h1 style={{ color: "#4b2e17" }}>The Baker’s Corner</h1>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link as={Link} to="/" exact className="text-white">
+                        <Nav.Link as={Link} to="/" exact className="text-dark-brown">
                             Home
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/menu" className="text-white">
+                        <Nav.Link as={Link} to="/menu" className="text-dark-brown">
                             Our Menu
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/quiz" className="text-white">
+                        <Nav.Link as={Link} to="/quiz" className="text-dark-brown">
                             Quiz
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/contact" className="text-white">
+                        <Nav.Link as={Link} to="/contact" className="text-dark-brown">
                             Contact
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+
+
             <div className="container mt-4 app-container">
                 <Routes>
                     <Route path="/" element={<Outlet />}>
@@ -363,6 +381,16 @@ function App() {
                         <Route path="/contact" element={<Contact />} />
                     </Route>
                 </Routes>
+            </div>
+
+            <div className="footer">
+                <p>© 2023 The Baker’s Corner. All rights reserved.</p>
+                <p>Follow us on:</p>
+                <div>
+                    <a href="#" className="text-dark-brown mx-2">Facebook</a>
+                    <a href="#" className="text-dark-brown mx-2">Instagram</a>
+                    <a href="#" className="text-dark-brown mx-2">Twitter</a>
+                </div>
             </div>
         </Router>
     );

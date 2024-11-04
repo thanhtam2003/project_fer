@@ -1,0 +1,117 @@
+body {
+    background-color: #d2b48c;
+    color: #4b2e17;
+    font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+    background-color: #f5e3c3;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container,
+.navbar,
+.card,
+.carousel-item {
+    background-color: #f5e3c3;
+    color: #4b2e17;
+}
+
+.navbar {
+    background-color: #b8860b;
+    border-bottom: 2px solid #d2a679;
+}
+
+h1,
+h2,
+h3,
+p,
+.text-dark-brown {
+    color: #4b2e17;
+}
+
+button,
+.btn-outline-brown {
+    color: #4b2e17;
+    border-color: #4b2e17;
+    background-color: #d2a679;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover,
+.btn-outline-brown:hover {
+    background-color: #b8860b;
+    color: #fff;
+    border-color: #b8860b;
+}
+
+.card-title,
+.card-text {
+    color: #4b2e17;
+}
+
+.bg-light-brown {
+    background-color: #f5e3c3 !important;
+}
+
+.text-dark-brown {
+    color: #4b2e17 !important;
+}
+
+.footer {
+    background-color: #d2a679;
+    color: #4b2e17;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #b8860b;
+}
+
+.footer a {
+    color: #4b2e17;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #5c3b28;
+}
+
+.card {
+    background-color: #f5e3c3 !important;
+    border: none;
+    color: #4b2e17 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title,
+.card-text {
+    color: #4b2e17 !important;
+}
+
+.card .btn-outline-brown {
+    color: #4b2e17 !important;
+    border-color: #4b2e17 !important;
+    background-color: #d2a679 !important;
+}
+
+.card .btn-outline-brown:hover {
+    background-color: #b8860b !important;
+    color: #fff !important;
+}
+
+.btn-outline-brown,
+button {
+    color: #4b2e17 !important;
+    border-color: #d2a679 !important;
+    background-color: #f5e3c3 !important;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn-outline-brown:hover,
+button:hover {
+    background-color: #daa521 !important;
+    color: #fff !important;
+    border-color: #e9ac11 !important;
+}
