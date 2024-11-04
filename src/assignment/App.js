@@ -189,71 +189,43 @@ function Menu() {
     );
 }
 
-function Quiz() {
-    const [state, dispatch] = useReducer(reducer, initialState);
-
-    const handleOption = (option) => {
-        dispatch({ type: 'SELECT_OPTION', payload: option });
-    }
-
-    const handleNextQuestion = () => {
-        dispatch({ type: 'NEXT_QUESTION' });
-    }
-
-    const handleRestart = () => {
-        dispatch({ type: 'RESTART_QUIZ' });
-    }
-
-    if (state.showScore) {
-        return (
-            <Container>
-                <Row className='bg-dark text-white mt-3 p-3 rounded'>
-                    <Col >
-                        <h2>Your score is {state.score}/{state.questions.length}</h2>
-                        <button onClick={handleRestart} className="btn btn-outline-light">Restart Quiz</button>
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
-
+function AboutUs() {
     return (
         <Container>
-            <Row className='bg-dark text-white mt-3 p-3 rounded'>
+            <Row className=' text-white mt-3 p-3 rounded'>
+                <h1>Our Story</h1>
                 <Col >
-                    <h2>Question {state.questions[state.currentQuestion].id}</h2>
-                    <h3>{state.questions[state.currentQuestion].question}</h3>
-                    <Form>
-                        <table className="table table-dark table-bordered">
-                            <tbody>
-                                {
-                                    state.questions[state.currentQuestion].options.map((option, index) => (
-                                        <tr key={index}>
-                                            <td>
-                                                <Form.Check
-                                                    type="radio"
-                                                    label={option}
-                                                    name="quizOption"
-                                                    id={`option-${index}`}
-                                                    onChange={() => handleOption(option)}
-                                                    checked={state.selectedOption === option}
-                                                />
-                                            </td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-                    </Form>
-                    <div>
-                        <button onClick={handleNextQuestion} className="btn btn-outline-light" disabled={!state.selectedOption}>Next</button>
-                    </div>
+                    <p> Welcome to The Baker’s Corner, where the scent of freshly baked bread and pastries mingles with the spirit of a community that cherishes the simple joys of life. Our journey began in 2010, in the bustling heart of Đà Nẵng, with a single oven, a handful of cherished family recipes, and a dream to create a haven for all who step through our doors. </p> 
+                    <p> The story of The Baker’s Corner is one woven with threads of passion, tradition, and a relentless pursuit of excellence. Our founder, inspired by the warmth and love of a family kitchen, sought to share this joy with the wider community. Armed with recipes passed down through generations, we opened our doors with a vision: to bring people together over shared meals and create memorable experiences through the art of baking. </p> 
+                    <p> Our early days were modest. The kitchen was small, the resources limited, but the dreams were grand. With each loaf of bread that emerged from the oven, we felt a sense of accomplishment and a connection to our heritage. Every day was a new opportunity to learn, to refine our craft, and to bring smiles to the faces of our customers. </p> 
+                    <p> As we grew, so did our commitment to quality. At The Baker’s Corner, we believe that baking is both an art and a science. We take pride in our meticulous processes and our creative flair. Our team of skilled bakers and pastry chefs put their heart and soul into each creation, ensuring that every bite is a testament to their passion and expertise. </p> 
+                    <p> Each product, from our creamy cheesecakes to our buttery croissants, is crafted with the finest ingredients. We source our flour from local mills, our dairy from trusted farms, and our fruits from nearby orchards. This commitment to local sourcing not only supports our community but also ensures that our products are fresh, flavorful, and of the highest quality. </p> 
+                    <p> The Baker’s Corner is more than just a bakery; it’s a place where the community gathers, where memories are made, and where every bite tells a story. Our cozy seating area invites friends to catch up over coffee and pastries, families to celebrate special occasions, and individuals to find a moment of peace and indulgence in their busy lives. </p> 
+                    <p> We’re not just about selling pastries; we’re about sharing our passion and making your moments sweeter. Whether it’s a morning croissant, a birthday cake, or a wedding dessert table, we’re honored to be a part of your special occasions. Every product we create is made with love and care, with the hope that it brings joy to your day. </p> 
+                    <p> We are deeply committed to sustainability and supporting local farmers. By sourcing our ingredients from trusted local suppliers, we ensure that every bite is not only delicious but also responsible. Our dedication to quality and community is at the heart of everything we do. We believe that food has the power to bring people together, and we strive to create a welcoming environment where everyone feels at home. </p> 
+                    <p> Our bakery is designed with sustainability in mind. From our energy-efficient ovens to our use of biodegradable packaging, we are constantly seeking ways to reduce our environmental footprint. We believe that good business practices go hand in hand with taking care of our planet, and we are proud to be a part of a movement towards a more sustainable future. </p> 
+                    <p> Our journey has been one of growth and learning. Over the years, we’ve expanded our offerings to include a wide variety of baked goods, from traditional favorites to innovative new creations. We’re constantly experimenting with new recipes and techniques to bring you the best of both worlds—comforting classics and exciting new flavors. </p> 
+                    <p> In addition to our bakery, we also offer baking classes and workshops for those who want to learn the craft themselves. Sharing our knowledge and passion for baking is one of the most rewarding parts of what we do. We love seeing the joy on our students’ faces as they create their own delicious masterpieces. Our classes are designed for all skill levels, from beginners to seasoned bakers, and cover a wide range of topics, from bread making to pastry decoration. </p> 
+                    <p> The Baker’s Corner is built on the hard work and dedication of a passionate team. Our bakers and pastry chefs come from diverse backgrounds, each bringing their unique skills and experiences to the kitchen. Together, we share a commitment to excellence and a love for the art of baking. </p> 
+                    <p> Our team works tirelessly to ensure that every product meets our high standards. From the early morning hours when the first loaves of bread go into the oven, to the late-night shifts preparing pastries for the next day, every member of our team plays a vital role in our success. We are grateful for their dedication and proud to have such a talented and passionate group of individuals as part of our family. </p> 
+                    <p> As we look to the future, we are excited about the possibilities that lie ahead. Our vision for The Baker’s Corner is one of continued growth and innovation, always staying true to our roots while embracing new opportunities. We are committed to expanding our reach, bringing our delicious baked goods to even more people, and continuing to be a place where the community can come together and celebrate the simple joys of life. </p> 
+                    <p> Thank you for being part of our journey. Here’s to many more years of delightful baking and cherished memories. We look forward to serving you and creating sweet moments for you and your loved ones. </p> 
+                    <p> Warmly,<br/> The Baker’s Corner Family 🍰✨ </p>
+                </Col>
+                <Col >
+                    
+                        <img src="./images/aboutus.png" alt="Our Story" style={{ width: '85%', marginBottom:'30px'}} />
+                        <img src="./images/aboutus2.png" alt="Our Story2" style={{ width: '85%', marginBottom:'30px'}} />
+                        <img src="./images/aboutus3.png" alt="Our Story3" style={{ width: '85%', marginBottom:'30px'}} />
+                        <img src="./images/aboutus4.png" alt="Our Story4" style={{ width: '85%', marginBottom:'30px'}} />
+                        <img src="./images/aboutus5.png" alt="Our Story" style={{ width: '85%', marginBottom:'30px'}} />
+                        <img src="./images/aboutus6.png" alt="Our Story" style={{ width: '85%', marginBottom:'30px'}} />
+                    
                 </Col>
             </Row>
         </Container>
     );
 }
-
 function Contact() {
     const [validated, setValidated] = useState(false);
 
@@ -267,8 +239,28 @@ function Contact() {
     };
     return (
         <Row className='mt-5 mb-5'>
+            <Col className="left">
+                <h1 style={{  fontWeight: 'bold' }}>
+                    The Baker’s Corner
+                </h1>
+                <p>
+                    Khu đô thị FPT City, Ngũ Hành Sơn, Da Nang 550000, Vietnam
+                </p>
+                <p>
+                    2anhdeptrai@cake.com
+                </p>
+                <p>
+                    +84 123 456 789
+                </p>
+                <p>
+                    IČO: 27062708
+                </p>
+                <p>
+                    Company registered in the Commercial Register kept by the Municipal Court in Da Nang, section ABC, File 8386.
+                </p>
+            </Col>
             <Col>
-                <h2 className='text-center text-white'>Contact Us</h2>
+                <h2 className='text-center text-pink'>Contact Us</h2>
                 <Form noValidate validated={validated} onSubmit={handleSubmit} className="bg-dark p-4 rounded">
                     <Row className='mb-3'>
                         <Form.Group as={Col} md="4" controlId="firstName">
@@ -307,6 +299,8 @@ function Contact() {
                         </Form.Group>
                     </Row>
 
+                    
+
                     <Row className='mb-3'>
                         <Form.Group as={Col} md="4" controlId="city">
                             <Form.Label className="text-white">City</Form.Label>
@@ -327,17 +321,8 @@ function Contact() {
                         </Form.Group>
                     </Row>
 
-                    <Form.Group className="mb-3">
-                        <Form.Check
-                            required
-                            label={<span className="text-white">Agree to terms and conditions</span>}
-                            feedback="You must agree before submitting."
-                            feedbackType="invalid"
-                        />
-                    </Form.Group>
-
                     <Button variant="outline-light" type="submit">
-                        Submit form
+                        Send
                     </Button>
                 </Form>
             </Col>
@@ -361,8 +346,8 @@ function App() {
                         <Nav.Link as={Link} to="/menu" className="text-dark-brown">
                             Our Menu
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/quiz" className="text-dark-brown">
-                            Quiz
+                        <Nav.Link as={Link} to="/aboutUs" className="text-dark-brown">
+                            About Us
                         </Nav.Link>
                         <Nav.Link as={Link} to="/contact" className="text-dark-brown">
                             Contact
@@ -377,7 +362,7 @@ function App() {
                     <Route path="/" element={<Outlet />}>
                         <Route index element={<HomePage />} />
                         <Route path="/menu" element={<Menu />} />
-                        <Route path="/quiz" element={<Quiz />} />
+                        <Route path="/aboutUs" element={<AboutUs />} />
                         <Route path="/contact" element={<Contact />} />
                     </Route>
                 </Routes>
@@ -395,6 +380,7 @@ function App() {
         </Router>
     );
 }
+
 
 
 export default App;
